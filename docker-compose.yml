@@ -1,0 +1,21 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_DB=mongodb://mongodb:27017/subledger
+
+  mongodb:
+    image: mongo:7
+    ports:
+      - "27018:27017"
+    volumes:
+      - data:/data/db
+
+volumes:
+  data:
