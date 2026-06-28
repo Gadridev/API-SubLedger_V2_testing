@@ -3,9 +3,7 @@ import request from "supertest";
 import mongoose from "mongoose";
 import app from "../../app.js";
 import User from "../../model/User.js";
-import dotenv from "dotenv";
 
-dotenv.config({ path: ".env.test" });
 
 before(async () => {
   await mongoose.connect(process.env.MONGO_DB);

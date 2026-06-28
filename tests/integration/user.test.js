@@ -1,12 +1,10 @@
 import { expect } from "chai";
 import request from "supertest";
 import mongoose from "mongoose";
-import dotenv from "dotenv";
 
 import app from "../../app.js";
 import User from "../../model/User.js";
 
-dotenv.config({ path: ".env.test" });
 
 let token;
 let userId;
